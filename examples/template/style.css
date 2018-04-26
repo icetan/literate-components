@@ -1,0 +1,90 @@
+html {
+  /* font-size: 14px; */
+}
+
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background: #f3f2f1 linear-gradient(to right, #fefefe, #fefefe 38rem, #f3f2f1 38rem, #f3f2f1) repeat-y;
+  color: #545352;
+}
+
+body > p > code,
+body > pre > code {
+  color: black;
+  font-size: 0.9rem;
+}
+body > pre {
+  background: #f3f2f1;
+}
+body > .lit {
+  background: #fcfbfa;
+}
+
+body > p a,
+body > p a:active,
+body > p a:visited,
+body > blockquote a,
+body > blockquote a:active,
+body > blockquote a:visited {
+  color: black;
+}
+
+body > p,
+body > blockquote,
+body > pre,
+body > .lit {
+  margin: 0;
+  padding: 2rem;
+  width: 34rem;
+}
+body > blockquote > p {
+  margin: 0;
+  padding: 0 0 0 0.6rem;
+  border-left: 0.4rem solid #ecebea;
+
+  width: auto;
+  color: #acabaa;
+  font-family: serif;
+  font-style: italic;
+  font-size: 1.5rem;
+  letter-spacing: -0.03em;
+}
+body > blockquote cite {
+  font-size: 1rem;
+}
+body > pre {
+  float: left;
+  min-width: 34rem;
+}
+body > .lit {
+  float: left;
+}
+
+body > pre ~ p {
+  float: left;
+}
+body > p + p {
+  float: none;
+  clear: both;
+}
+
+body > h1,
+body > h2,
+body > h3,
+body > h4,
+body > h5,
+body > h6 {
+  clear: both;
+  margin: 0;
+  padding: 1.5rem 0 0.5rem 2rem;
+}
+
+body > .sep:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+body > pre:first-of-type {
+  display: none;
+}

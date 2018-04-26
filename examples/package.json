@@ -1,0 +1,35 @@
+{
+  "name": "literate-component-examples",
+  "version": "0.0.0",
+  "description": "Example project using literate-components to write and generate documentation",
+  "main": "lib/index.js",
+  "files": [
+    "lib/"
+  ],
+  "scripts": {
+    "prepare": "npm run build",
+    "build": "npm run build:clean && babel src/ -d lib/",
+    "build:clean": "rm -rf lib/",
+    "build:watch": "npm run build:clean && babel src/ -w -d lib/",
+    "docs:prep": "mkdir -p www && cp template/style.css www/style.css && cp node_modules/highlight.js/styles/googlecode.css www/syntax.css",
+    "docs:extract": "lc --code www/index.js --html www/index.html --template template/index.html README.md",
+    "docs:bundle": "ln -sf .. node_modules/literate-component-examples; browserify www/index.js -o www/bundle.js -t [ babelify ]",
+    "docs:clean": "rm -rf www/",
+    "docs": "npm run docs:clean && npm run docs:prep && npm run docs:extract && npm run docs:bundle"
+  },
+  "dependencies": {
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "styled-components": "^2.3.3"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "babelify": "^8.0.0",
+    "browserify": "^14.5.0",
+    "highlight.js": "^9.12.0",
+    "literate-components": "../"
+  }
+}
